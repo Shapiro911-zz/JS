@@ -25,7 +25,7 @@ class GoodsItem {
                 $${this.price.toFixed(2)}</p>
         </a>
         <div class="box_add">
-            <a id="${this.id}" class="add" href="#"><img class="product_cart" src="img/cart.svg" alt="cart">
+            <a id="${this.id}" class="add"><img class="product_cart" src="img/cart.svg" alt="cart">
                 Add to Cart</a>
         </div>
         </div>`
@@ -60,16 +60,7 @@ class GoodsList {
             });
         });
     }
-    calcPrice() {
-        let totalPrice = 0;
-        this.goods.forEach(good => {
-            totalPrice += good.price;
-        });
-        return totalPrice;
-    }
 }
-
-
 
 const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
@@ -81,14 +72,14 @@ class CartItem extends GoodsItem {
     render() {
         return `<div class="cart_item">
         <a href="single_page.html">
-            <img src="img/product_sort_img_${this.id}.png" alt="product_sort_img_${this.id}">
+            <img src="img/product_sort_img_${this.id}.png" alt="product_sort_img_${this.id}" class="cart_product_img">
         </a>
         <div class="cart_item_info">
             <p class="cart_item_name">${this.title}</p>
             <img class="cart_stars" src="img/cart_stars.png" alt="cart_stars">
             <p class="cart_price">${this.quantity} x $${this.price}</p>
         </div>
-        <img class="cart_cancel" src="img/cart_cancel.png" alt="cross">
+        <img class="cart_cancel" id="${this.id}" src="img/cart_cancel.png" alt="cross">
     </div>
     <hr class="cart_item_line">`
     };
@@ -97,6 +88,7 @@ class CartItem extends GoodsItem {
 class Cart {
     constructor() {
         this.goods = [];
+        this.totalPrice = 0;
     };
     addItem(item) {
         return fetch(`${API_URL}/addToBasket.json`)
@@ -107,19 +99,20 @@ class Cart {
                     for (let i = 0; i < this.goods.length; i++) {
                         if (this.goods[i].id == item.id) {
                             this.goods[i].quantity++;
+                            this.totalPrice += item.price;
                             exists = true;
                             break;
                         }
                     };
                     if (exists == false) {
                         this.goods.push(item);
+                        this.totalPrice += item.price;
                     }
                     exists = false;
                 }
                 else {
                     console.error('error');
                 }
-                console.log(this.goods);
                 cart.render();
             })
             .catch((err) => console.log(err));
@@ -130,17 +123,20 @@ class Cart {
             .then((response) => {
                 if (response.result == 1) {
                     for (let i = 0; i < this.goods.length; i++) {
-                        if (this.goods[i].id = id) {
+                        if (this.goods[i].id == id) {
                             if (this.goods[i].quantity > 1) {
                                 this.goods[i].quantity--;
+                                this.totalPrice -= this.goods[i].price;
                                 break;
                             }
                             else {
-                                this.goods.splice(id, 1);
+                                this.totalPrice -= this.goods[i].price;
+                                this.goods.splice(i, 1);
                             };
                         };
                     };
                 };
+                cart.render();
             })
             .catch((err) => console.log(err));
     };
@@ -151,6 +147,13 @@ class Cart {
             cartHtml += cartItem.render();
         });
         document.querySelector('.cart_products').innerHTML = cartHtml;
+        let removeButtons = document.querySelectorAll('.cart_cancel')
+        removeButtons.forEach(removeButton => {
+            removeButton.addEventListener('click', function (event) {
+                cart.removeItem(event.target.getAttribute('id'));
+            });
+        });
+        document.querySelector('.total_price').innerHTML = '$' + `${this.totalPrice}`;
     };
 }
 
@@ -158,3 +161,7 @@ const goodsList = new GoodsList();
 goodsList.fetchGoods();
 goodsList.render();
 const cart = new Cart();
+
+document.querySelector('.cart').addEventListener('click', function () {
+    document.querySelector('.live_cart').classList.toggle('active');
+});
