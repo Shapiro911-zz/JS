@@ -1,0 +1,578 @@
+* {
+              margin: 0;
+              padding: 0;
+}
+
+body {
+              font-family: Roboto;
+}
+
+.text {
+              font-size: 16px;
+              line-height: 26px;
+              color: #1F3F68;  
+              letter-spacing: 0.05em;
+              opacity: 0.6;
+}
+
+.text-project {
+              margin: 32px auto 64px; 
+              width: 75%;
+              opacity: 1;
+              text-align: center;
+}
+
+.text-footer {
+              text-align: unset;
+              margin-top: 32px;
+              color: #FFFFFF;
+              margin-bottom: 96px;
+}
+
+.headline {
+              font-size: 64px;
+              color: #1F3F68;
+              width: 510px;
+              font-weight: 300;
+              line-height: 74px;
+              letter-spacing: 0.04em;
+              margin-bottom: 32px;
+}
+
+.top-contentbox {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+}
+
+.intro {
+              margin-top: 115px;
+              flex-grow: 1;
+              background-image: url(img/top-back.png);
+              background-repeat: no-repeat;
+              background-position: right center;
+              background-size: 44%;
+}
+
+.text-intro {
+              width: 425px;
+}
+
+.top-button {
+              font-size: 16px;
+              line-height: 26px;
+              text-align: center;
+              letter-spacing: 0.04em;
+              color: #FFFFFF;
+              background: #5A98D0;
+              box-shadow: 5px 10px 20px rgba(53, 110, 173, 0.2);
+              border-radius: 10px;
+              padding: 15px 50px 15px 50px;
+              text-decoration: none;
+              display: inline-block;
+              margin-top: 71px;
+}
+
+.footer-button {
+                font-size: 16px;
+                line-height: 26px;
+                text-align: center;
+                letter-spacing: 0.04em;
+                color: #FFFFFF;
+                background: #5A98D0;
+                padding: 15px 80px;
+                text-decoration: none;
+}
+
+.title {
+              font-size: 36px;
+              text-align: center;    
+              font-weight: 300;
+              line-height: 46px;
+              letter-spacing: 0.05em;
+}
+
+.small_title {
+              font-size: 20px;
+              line-height: 30px;
+              color: #1F3F68;
+              letter-spacing: 0.05em;
+              margin-bottom: 14px;
+}
+
+.contacts-small-title {
+        letter-spacing: 0.04em;
+        font-weight: 500;
+        margin-bottom: 24px;
+}
+
+.card {
+              width: 359px;
+              padding: 44px 32px;
+              box-sizing: border-box;
+              background: #FFFFFF;
+              box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+              border-radius: 10px;
+              display: flex;
+              flex-direction: column;
+}
+
+.card-link {
+              font-size: 14px;
+              line-height: 30px;
+              letter-spacing: 0.05em;
+              color: #5A98D0;
+              margin-top: 30px;
+              text-decoration: none;
+              display: flex;
+              flex-direction: row;
+}
+
+.card-img {
+              align-self: center;
+              margin-bottom: 51px;
+}
+
+.arrow {
+        margin-left: 24px;   
+        align-self: center; 
+}
+
+.project-parent {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              margin-top: 32px;
+}
+
+.project-item {
+              position: relative;
+              flex-grow: 1;
+}
+
+.project-item:first-child {
+              margin-right: 32px;
+}
+
+.project-img {
+              width: 100%;
+}
+
+.project-text {
+              font-size: 32px;
+              line-height: 46px;
+              text-align: right;
+              letter-spacing: 0.05em;
+              color: #FFFFFF;
+              position: absolute;
+              top: 64px;
+              right: 64px;
+}
+
+.project-parent .project-text {
+              position: absolute;
+              top: 64px;
+              left: 32px;
+              right: unset;
+
+}
+
+.contacts_title {
+              font-weight: 500;
+              font-size: 44px;
+              line-height: 74px;
+              letter-spacing: 0.04em;
+              color: #FFFFFF;
+              text-align: center;  
+              margin-top: 51px;  
+              margin-bottom: 16px; 
+}
+
+.inputs {
+              border: 1px solid #356EAD;
+              box-sizing: border-box;
+              border-radius: 10px;
+              opacity: 0.4;   
+              width: 428px;
+              margin-top: 8px;
+              margin-bottom: 32px;
+              padding: 16px;
+}
+
+.message {
+        height: 144px;
+        margin-bottom: 72px;
+}
+
+.submit_button {
+              background: #5A98D0;
+              box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+              border-radius: 10px;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 26px;
+              text-align: center;
+              color: #FFFFFF;
+              text-transform: uppercase;
+              width: 428px;
+              height: 72px;
+}
+
+.contacts-img {
+        margin-top: 78px;
+        margin-bottom: 56px;
+}
+
+.form {
+        background: #FFFFFF;
+        margin-bottom: 96px;
+        padding: 56px 56px;
+        box-sizing: border-box;
+}
+
+.map {
+        width: 940px;
+}
+
+.container {
+              max-width: 1140px;
+              margin: 0 auto;
+}
+
+.header {
+              display: flex;
+              justify-content: space-between;
+              list-style-type: none;
+              margin-top: 42px;
+}
+
+.what-we-do {
+              margin-top: 64px;
+}
+
+.about-inner {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 64px;
+              margin-bottom: 64px;
+}
+
+.footer-top {              
+              justify-content: space-between;
+              display: flex;
+              align-items: center;
+              width: 1140px;
+}
+
+.footer .title {
+              width: 340px;
+              text-align: left;
+              color: white;
+}
+
+.contact-details {
+            display: flex;
+            flex-direction: row;  
+            margin-bottom: 64px;
+            padding-left: 1em;
+}
+
+.contact-details li span {
+              position: relative;
+              left: 19px;
+}
+
+.contact-details li {
+              width: 316px;
+              margin-right: 74px;
+              font-size: 16px;
+              line-height: 26px;
+              letter-spacing: 0.05em;
+              color: #FFFFFF;
+              list-style-type: decimal;
+
+}
+
+.footer {
+              display: flex;
+              flex-wrap: wrap;
+              margin-top: 112px;
+              background: #316099;
+}
+
+.footer-info {
+              margin-top: 91px;
+              width: 495px;
+}
+
+.line {
+              border: 1px solid #FFFFFF;
+              opacity: 0.4;
+              margin-bottom: 64px;
+              width: 100%;
+}
+
+.top {
+              min-height: 768px;
+              background: linear-gradient(0deg, #EBF3FB 8.84%, rgba(152, 195, 232, 0) 31.12%);
+}
+
+.main {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              margin-top: 50px;
+}
+
+.footer-bottom {
+        display: flex;
+        flex-direction: column;
+}
+
+.copyright {
+              margin-bottom: 64px;
+}
+
+.contact-us {
+        margin-top: 54px;
+        display: flex;
+        flex-direction: column;
+        background-image: url(img/contacts-back.png);
+        background-size: cover;
+        margin-bottom: 57px;
+}
+
+.text-contact-us {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        max-width: 780px;
+        align-self: center;
+        margin-bottom: 49px;
+}
+
+.text-contact {
+        letter-spacing: 0.04em;
+        font-weight: 300;
+        margin-bottom: 40px;
+}
+
+.contact-list li {
+        margin-bottom: 16px;
+        list-style-position: inside;
+        list-style-image: url(img/phone.svg);
+}
+
+.invalid {
+        border: 1px solid red;
+}
+
+@media (max-width: 1024px) {
+        .container {
+                padding-left: 32px;
+                padding-right: 32px;
+        }
+
+        .intro {
+                background-position: right 200px;
+        }
+
+        .about-inner {
+                flex-direction: column;
+                align-items: center; 
+        }
+
+        .card {
+                margin-bottom: 32px;
+        }
+
+        .footer {
+                margin-top: 109px;
+        }
+
+        .footer-button {
+                padding: 3px 30px;
+                margin-left: 51px;
+        }
+
+        .footer .container {
+                padding-left: 0;
+                padding-right: 0;
+        }
+
+        .footer-info {
+                max-width: 336px;
+        }
+
+        .contact-details {
+                flex-direction: column;
+                margin-left: unset;
+        }
+
+        .contact-details li {
+                margin-bottom: 25px;
+                margin-right: 0;
+                width: unset;
+        }
+
+        .contact-details li span {
+                left: 36px;
+        }
+
+        .contact-details li:last-child {
+                margin-bottom: 0;
+        }
+
+        .footer-top {
+                width: unset;
+        }
+
+        .footer-bottom {
+                width: 519px;
+        }
+
+        .copyright {
+                margin-left: unset;
+        }
+}
+
+@media (max-width: 667px) {
+        .headline {
+                width: 100%;
+                font-size: 32px;
+                line-height: 37px;
+                margin-bottom: 12px;
+                text-align: center;
+        }
+
+        .intro {
+                margin-top: 36px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-image: none;
+        }
+
+        .text-intro {
+                width: 100%;
+                text-align: center;
+        }
+
+        .header {
+                margin-top: 24px;
+        }
+
+        .top-button {
+                font-size: 12px;
+                line-height: 26px;
+                padding: 0 8px;
+        }
+
+        .top {
+                min-height: 376px;
+                padding-bottom: 41px;
+                box-sizing: border-box;
+        }
+
+        .title {
+                font-size: 24px;
+                line-height: 28px;
+        }
+
+        .what-we-do {
+                margin-top: 48px;
+        }
+
+        .about-inner {
+                margin-top: 32px;
+        }
+
+        .card {
+                width: 100%;
+        }
+
+        .text-project {
+                width: 100%;
+        }
+
+        .project-text {
+                font-size: 16px;
+                line-height: 19px;
+                top: 16px;
+                right: 16px;
+        }
+
+        .project-parent {
+                flex-direction: column;
+                margin-top: 16px;
+        }
+
+        .project-img {
+                width: 100%;
+        }
+
+        .project-parent .project-text {
+                top: 26px;
+                left: 16px;
+        }
+
+        .project-item:first-child{
+                margin-right: 0;
+                margin-bottom: 16px;
+        }
+        
+        .footer {
+                margin-top: 64px;
+        }
+
+        .footer-info {
+                margin-top: 18px;
+                width: 100%;
+                margin-left: 0;
+                align-self: center;
+        }
+
+        .footer .title {
+                text-align: center;
+        }
+
+        .footer-top {
+                flex-direction: column;
+                max-width: 375px;
+        }
+
+        .text-footer {
+                text-align: center;
+        }
+
+        .footer-button {
+                width: 108px;
+                margin: 40px 132px;
+        }
+
+        .line {
+                margin-bottom: 32px;
+                margin-top: 0;
+        }
+
+        .contact-details {
+                margin-left: 56px;
+                margin-bottom: 37px;
+        }
+
+        .footer-bottom {
+                width: unset;
+        }
+
+        .copyright {
+                align-self: center;
+                margin-bottom: 32px;
+        }
+
+        .contact-details li span {
+                left: 19px;
+        }
+}
+
