@@ -1,15 +1,3 @@
-const products = [
-    { id: 1, title: 'mango people t-shirt', price: 52.00 },
-    { id: 2, title: 'mango people t-shirt', price: 52.00 },
-    { id: 3, title: 'mango people t-shirt', price: 52.00 },
-    { id: 4, title: 'mango people t-shirt', price: 52.00 },
-    { id: 5, title: 'mango people t-shirt', price: 52.00 },
-    { id: 6, title: 'mango people t-shirt', price: 52.00 },
-    { id: 7, title: 'mango people t-shirt', price: 52.00 },
-    { id: 8, title: 'mango people t-shirt', price: 52.00 },
-    { id: 9, title: 'mango people t-shirt', price: 52.00 }
-];
-
 class GoodsItem {
     constructor(id, title, price) {
         this.id = id;
@@ -25,7 +13,7 @@ class GoodsItem {
                 $${this.price.toFixed(2)}</p>
         </a>
         <div class="box_add">
-            <a id="${this.id}" class="add"><img class="product_cart" src="img/cart.svg" alt="cart">
+            <a id="${this.id}" class="add"><img id="${this.id} "class="product_cart" src="img/cart.svg" alt="cart">
                 Add to Cart</a>
         </div>
         </div>`
@@ -35,6 +23,8 @@ class GoodsItem {
 class GoodsList {
     constructor() {
         this.goods = [];
+        this.fetchGoods();
+        this.render();
     }
     fetchGoods() {
         this.goods = products;
@@ -46,23 +36,19 @@ class GoodsList {
             listHtml += goodItem.render();
         });
         document.querySelector('.product_list').innerHTML = listHtml;
-        let addButtons = document.querySelectorAll('.add')
-        addButtons.forEach(addButton => {
-            addButton.addEventListener('click', function (event) {
-                let cartItem;
-                for (let i = 0; i < goodsList.goods.length; i++) {
-                    if (event.target.getAttribute('id') == goodsList.goods[i].id) {
-                        cartItem = new CartItem(goodsList.goods[i].id, goodsList.goods[i].title, goodsList.goods[i].price, 1);
-                        break;
-                    }
+        let addButtons = document.querySelector('.product_list');
+        addButtons.addEventListener('click', function (event) {
+            let cartItem;
+            for (let i = 0; i < goodsList.goods.length; i++) {
+                if (event.target.getAttribute('id') == goodsList.goods[i].id) {
+                    cartItem = new CartItem(goodsList.goods[i].id, goodsList.goods[i].title, goodsList.goods[i].price, 1);
+                    break;
                 }
-                cart.addItem(cartItem);
-            });
+            }
+            cart.addItem(cartItem);
         });
     }
 }
-
-const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 class CartItem extends GoodsItem {
     constructor(id, title, price, quantity) {
@@ -89,6 +75,13 @@ class Cart {
     constructor() {
         this.goods = [];
         this.totalPrice = 0;
+        document.querySelector('.cart').addEventListener('click', function () {
+            document.querySelector('.live_cart').classList.toggle('active');
+        });
+        let removeButtons = document.querySelector('.cart_products');
+        removeButtons.addEventListener('click', function (event) {
+            cart.removeItem(event.target.getAttribute('id'));
+        });
     };
     addItem(item) {
         return fetch(`${API_URL}/addToBasket.json`)
@@ -147,21 +140,9 @@ class Cart {
             cartHtml += cartItem.render();
         });
         document.querySelector('.cart_products').innerHTML = cartHtml;
-        let removeButtons = document.querySelectorAll('.cart_cancel')
-        removeButtons.forEach(removeButton => {
-            removeButton.addEventListener('click', function (event) {
-                cart.removeItem(event.target.getAttribute('id'));
-            });
-        });
         document.querySelector('.total_price').innerHTML = '$' + `${this.totalPrice}`;
     };
 }
 
 const goodsList = new GoodsList();
-goodsList.fetchGoods();
-goodsList.render();
 const cart = new Cart();
-
-document.querySelector('.cart').addEventListener('click', function () {
-    document.querySelector('.live_cart').classList.toggle('active');
-});
