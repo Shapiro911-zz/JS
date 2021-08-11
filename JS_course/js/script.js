@@ -36,7 +36,7 @@ class GoodsList {
             listHtml += goodItem.render();
         });
         document.querySelector('.product_list').innerHTML = listHtml;
-        let addButtons = document.querySelector('.product_list');
+        /*let addButtons = document.querySelector('.product_list');
         addButtons.addEventListener('click', function (event) {
             let cartItem;
             for (let i = 0; i < goodsList.goods.length; i++) {
@@ -46,7 +46,7 @@ class GoodsList {
                 }
             }
             cart.addItem(cartItem);
-        });
+        });*/
     }
 }
 
@@ -55,7 +55,7 @@ class CartItem extends GoodsItem {
         super(id, title, price);
         this.quantity = quantity;
     }
-    render() {
+    /*render() {
         return `<div class="cart_item">
         <a href="single_page.html">
             <img src="img/product_sort_img_${this.id}.png" alt="product_sort_img_${this.id}" class="cart_product_img">
@@ -68,10 +68,10 @@ class CartItem extends GoodsItem {
         <img class="cart_cancel" id="${this.id}" src="img/cart_cancel.png" alt="cross">
     </div>
     <hr class="cart_item_line">`
-    };
+    };*/
 }
 
-class Cart {
+/*class Cart {
     constructor() {
         this.goods = [];
         this.totalPrice = 0;
@@ -142,7 +142,7 @@ class Cart {
         document.querySelector('.cart_products').innerHTML = cartHtml;
         document.querySelector('.total_price').innerHTML = '$' + `${this.totalPrice}`;
     };
-}
+}*/
 
 const goodsList = new GoodsList();
-const cart = new Cart();
+//const cart = new Cart();

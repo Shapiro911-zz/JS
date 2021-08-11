@@ -12,9 +12,23 @@ const products = [
     { id: 9, title: 'clothes', price: 52.00 }
 ];
 
-const app = new Vue({
+const productPage = new Vue({
     el: '#product-page',
     data: {
         goods: products,
+        cartItem: [],
     },
+    mounted() {
+        let addButtons = document.querySelector('.product_list');
+        addButtons.addEventListener('click', function (event) {
+            let cartItem;
+            for (let i = 0; i < goodsList.goods.length; i++) {
+                if (event.target.getAttribute('id') == goodsList.goods[i].id) {
+                    cartItem = new CartItem(goodsList.goods[i].id, goodsList.goods[i].title, goodsList.goods[i].price, 1);
+                    break;
+                }
+            }
+            productPage.$refs.cart.addItem(cartItem);
+        });
+    }
 });

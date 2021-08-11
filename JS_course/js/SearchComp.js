@@ -13,9 +13,6 @@ Vue.component('search', {
         filterGoods() {
             let regexp = new RegExp(this.searchLine, 'i');
             this.filteredGoods = this.goods.filter(good => regexp.test(good.title));
-            if (this.filteredGoods.length == 0) {
-                document.querySelector('.product_list').innerHTML = `<p>Нет данных</p>`;
-            }
             return this.filteredGoods;
         }
     },
@@ -24,5 +21,22 @@ Vue.component('search', {
     <button class="search_button" type="submit">
         <i class="fas fa-search"></i>
     </button>
+    <div class="search_result" v-show="this.searchLine.length > 0">
+    <searchItem v-for="good of filteredGoods" :searchItem="good"></searchItem>
+    </div>
     </div>`
+});
+
+Vue.component('searchItem', {
+    props: ['searchItem'],
+    template:
+        `<div class="search_item">
+            <a href="single_page.html">
+                <img :src="'img/product_sort_img_' + searchItem.id + '.png'" alt="product_sort_img" class="cart_product_img">
+    </a>
+                <div class="cart_item_info">
+                    <p class="cart_item_name">{{ searchItem.title }}</p>
+                </div>
+
+        </div>`
 });
