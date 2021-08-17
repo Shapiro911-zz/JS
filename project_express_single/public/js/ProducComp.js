@@ -1,5 +1,5 @@
 Vue.component('products', {
-    data(){
+    data() {
         return {
             catalogUrl: '',
             products: [],
@@ -8,15 +8,15 @@ Vue.component('products', {
         }
     },
     methods: {
-        filter(value){
+        filter(value) {
             let regexp = new RegExp(value, 'i');
             this.filtered = this.products.filter(el => regexp.test(el.product_name));
         }
     },
-    mounted(){
+    mounted() {
         this.$parent.getJson('/api/products')
             .then(data => {
-                for(let el of data){
+                for (let el of data) {
                     this.products.push(el);
                     this.filtered.push(el);
                 }

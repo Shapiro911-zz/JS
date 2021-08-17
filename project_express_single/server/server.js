@@ -89,7 +89,7 @@ app.delete('/api/cart', (req, res) => {
       res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
     } else {
       const cart = JSON.parse(data);
-      cart.contents.splice(req.body.id_product, 1);
+      cart.contents.splice(cart.contents.map(el => el.id_product).indexOf(req.body.id_product), 1);
       fs.writeFile('./server/db/userCart.json', JSON.stringify(cart), (err) => {
         if (err) {
           res.send('{"result": 0}');
