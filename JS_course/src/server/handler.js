@@ -1,10 +1,12 @@
 const fs = require('fs');
 const cart = require('./cart');
+const singlePage = require('./singlePage')
 
 const actions = {
   add: cart.add,
   change: cart.change,
   remove: cart.del,
+  link: singlePage.link,
 };
 
 const handler = (req, res, action, file) => {

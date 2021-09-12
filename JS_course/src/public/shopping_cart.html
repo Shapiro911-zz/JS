@@ -826,126 +826,7 @@
                 </div>
             </div>
         </div>
-        <div class="shopping_cart_products container">
-            <div class="product_details">
-                <div class="product_details_left">
-                    <h3 class="checkout_title">Product Details</h3>
-                </div>
-                <div class="product_details_right">
-                    <h3 class="checkout_title">Unit price</h3>
-                    <h3 class="checkout_title">Quantity</h3>
-                    <h3 class="checkout_title">Shipping</h3>
-                    <h3 class="checkout_title">Subtotal</h3>
-                    <h3 class="checkout_title">Action</h3>
-                </div>
-            </div>
-            <hr class="shopping_cart_line">
-            <div class="shopping_cart_product_list">
-                <div class="shopping_cart_product">
-                    <div class="shopping_cart_product_left">
-                        <img src="img/shopping_cart_img_1.png" alt="shopping_cart_img_1">
-                        <div class="shopping_cart_product_info">
-                            <h3 class="checkout_title">Mango People T-shirt</h3>
-                            <span class="shopping_cart_product_text">Color:</span>
-                            <span class="shopping_cart_product_text shopping_cart_product_text_grey">Red</span>
-                            <br>
-                            <span class="shopping_cart_product_text">Size:</span>
-                            <span class="shopping_cart_product_text shopping_cart_product_text_grey">XL</span>
-                        </div>
-                    </div>
-                    <div class="shopping_cart_product_details">
-                        <p class="shopping_cart_product_details_text">$150</p>
-                        <input class="shopping_cart_product_quantity" type="number" placeholder="2">
-                        <p class="shopping_cart_product_details_text">free</p>
-                        <p class="shopping_cart_product_details_text">$300</p>
-                        <div class="cancel">
-                            <img class="cart_cancel" src="img/cart_cancel.png" alt="cross">
-                        </div>
-                    </div>
-                </div>
-                <hr class="shopping_cart_line">
-                <div class="shopping_cart_product">
-                    <div class="shopping_cart_product_left">
-                        <img src="img/shopping_cart_img_2.png" alt="shopping_cart_img_2">
-                        <div class="shopping_cart_product_info">
-                            <h3 class="checkout_title">Mango People T-shirt</h3>
-                            <span class="shopping_cart_product_text">Color:</span>
-                            <span class="shopping_cart_product_text shopping_cart_product_text_grey">Red</span>
-                            <br>
-                            <span class="shopping_cart_product_text">Size:</span>
-                            <span class="shopping_cart_product_text shopping_cart_product_text_grey">XL</span>
-                        </div>
-                    </div>
-                    <div class="shopping_cart_product_details">
-                        <p class="shopping_cart_product_details_text">$150</p>
-                        <input class="shopping_cart_product_quantity" type="number" placeholder="2">
-                        <p class="shopping_cart_product_details_text">free</p>
-                        <p class="shopping_cart_product_details_text">$300</p>
-                        <div class="cancel">
-                            <img class="cart_cancel" src="img/cart_cancel.png" alt="cross">
-                        </div>
-                    </div>
-                </div>
-                <hr class="shopping_cart_line">
-                <div class="shopping_cart_product">
-                    <div class="shopping_cart_product_left">
-                        <img src="img/shopping_cart_img_3.png" alt="shopping_cart_img_3">
-                        <div class="shopping_cart_product_info">
-                            <h3 class="checkout_title">Mango People T-shirt</h3>
-                            <span class="shopping_cart_product_text">Color:</span>
-                            <span class="shopping_cart_product_text shopping_cart_product_text_grey">Red</span>
-                            <br>
-                            <span class="shopping_cart_product_text">Size:</span>
-                            <span class="shopping_cart_product_text shopping_cart_product_text_grey">XL</span>
-                        </div>
-                    </div>
-                    <div class="shopping_cart_product_details">
-                        <p class="shopping_cart_product_details_text">$150</p>
-                        <input class="shopping_cart_product_quantity" type="number" placeholder="2">
-                        <p class="shopping_cart_product_details_text">free</p>
-                        <p class="shopping_cart_product_details_text">$300</p>
-                        <div class="cancel">
-                            <img class="cart_cancel" src="img/cart_cancel.png" alt="cross">
-                        </div>
-                    </div>
-                </div>
-                <hr class="shopping_cart_line">
-                <button class="shopping_cart_button" type="reset">cLEAR SHOPPING CART</button>
-            </div>
-        </div>
-        <div class="shopping_cart_checkout container">
-            <div class="shipping_adress">
-                <h3 class="total_price_text">Shipping Adress</h3>
-                <select class="select_country">
-                    <option>Bangladesh</option>
-                    <option>Ukraine</option>
-                    <option>Russia</option>
-                    <option>United States</option>
-                    <option>United Kingdom</option>
-                </select>
-                <input type="text" class="shipping_input" placeholder="State">
-                <input type="text" class="shipping_input" placeholder="Postcode / Zip">
-                <button type="submit" class="shopping_cart_button shopping_cart_checkout_button">get a quote</button>
-            </div>
-            <div class="coupon_discount">
-                <h3 class="total_price_text">coupon discount</h3>
-                <p class="text shopping_cart_text">Enter your coupon code if you have one</p>
-                <input type="text" class="shipping_input" placeholder="State">
-                <button type="submit" class="shopping_cart_button shopping_cart_checkout_button">Apply coupon</button>
-            </div>
-            <div class="proceed_to_checkout">
-                <div>
-                    <span class="sub_total_price">Sub total</span>
-                    <span class="sub_total_price">$900</span>
-                </div>
-                <div class="grand_total">
-                    <span class="total_price_text">GRAND TOTAl</span>
-                    <span class="figcap_text_pink" style="margin-left: 12px;">$900</span>
-                </div>
-                <hr class="proceed_to_checkout_line">
-                <a href="checkout.html" class="proceed_to_checkout_button">proceed to checkout</a>
-            </div>
-        </div>
+        <shoppingCart ref="shoppingCart"></shoppingCart>
         <div class=" subscribe">
             <img src="img/subscribe_back.png" alt="subs_back" style="opacity:0.25">
             <div class="subscribe_flex container">
@@ -1055,11 +936,12 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
     <script src="js/ErrorComp.js"></script>
-    <script src="js/ProductsComp.js"></script>
     <script src="js/SearchComp.js"></script>
     <script src="js/CartComp.js"></script>
-    <script src="js/product-page.js"></script>
+    <script src="js/shoppingCartComp.js"></script>
+    <script type="module" src="js/product-page.js"></script>
 </body>
 
 </html>

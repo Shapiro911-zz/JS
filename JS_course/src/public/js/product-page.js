@@ -6,7 +6,12 @@ const productPage = new Vue({
     },
     methods: {
         getJson(url) {
-            return fetch(url)
+            return fetch(url, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
                 .then(result => result.json())
                 .catch(error => {
                     this.$refs.error.setError(error);
@@ -19,7 +24,8 @@ const productPage = new Vue({
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
-            }).then(result => result.json())
+            })
+                .then(result => result.json())
                 .catch(error => {
                     this.$refs.error.setError(error);
                 });
@@ -31,7 +37,8 @@ const productPage = new Vue({
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
-            }).then(result => result.json())
+            })
+                .then(result => result.json())
                 .catch(error => {
                     this.$refs.error.setError(error);
                 });
@@ -43,7 +50,8 @@ const productPage = new Vue({
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
-            }).then(result => result.json())
+            })
+                .then(result => result.json())
                 .catch(error => {
                     this.$refs.error.setError(error);
                 });

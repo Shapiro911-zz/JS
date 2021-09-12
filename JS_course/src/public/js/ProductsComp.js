@@ -1,3 +1,4 @@
+
 Vue.component('products', {
     data() {
         return {
@@ -12,6 +13,15 @@ Vue.component('products', {
                 }
             });
     },
+    methods: {
+        linkItem(good) {
+            let find = this.goods.find(el => el.id === good.id);
+            if (find) {
+                let prod = Object.assign(good);
+                this.$parent.postJson(`/api/linkGood`, prod);
+            }
+        },
+    },
     template: `<div class="product_list">
     <product v-for="good of goods" :product="good" :key="good.id"></product>
     </div>`
@@ -21,7 +31,7 @@ Vue.component('product', {
     props: ['product'],
     template: `
     <div class="product_box">
-    <a class="link" href="single_page.html">
+    <a class="link" @click="$root.$refs.products.linkItem(product)" href="single_page.html">
         <img class="product_box_img" :src="'img/product_sort_img_' + product.id + '.png'" alt="product_img">
     <p class="text_box">{{product.title}}</p>
         <p class="text_box text_box_pink">

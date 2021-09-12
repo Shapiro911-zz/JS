@@ -27,7 +27,8 @@ Vue.component('search', {
         <i class="fas fa-search"></i>
     </button>
     <div class="search_result" v-show="this.searchLine.length > 0">
-    <searchItem v-for="good of filteredGoods" :searchItem="good" :key="good.id"></searchItem>
+    <searchItem v-for="good of filteredGoods.slice(0, 5)" :searchItem="good" :key="good.id"></searchItem>
+    
     </div>
     </div>`
 });
